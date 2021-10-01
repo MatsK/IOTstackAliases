@@ -105,6 +105,9 @@ alias                  I='cd ~/IOTstack; ls'
 alias                  S='cd ~/IOTstack/services; ls'
 alias                  T='cd ~/IOTstack/.templates; ls'
 alias                  V='cd ~/IOTstack/volumes; ls'
+alias                 IP='docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)'
+alias               HELP=''
+
 
 DPS() {
    DPS_CMD="docker ps --format \"table {{.Names}}\t{{.RunningFor}}\t{{.Status}}\""
