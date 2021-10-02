@@ -46,4 +46,3 @@
 | WireGuard           | WIREGUARD_SHELL    |
 | Zigbee              | ZIGBEE_SHELL       |
 
-
