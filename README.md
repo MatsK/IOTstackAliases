@@ -1,9 +1,14 @@
 # Useful aliases for working with IOTstack
 
-This will install aliases for som common task When working with [IOTstack](https://github.com/SensorsIot/IOTstack).
+## Purpose
 
-[HELP.mx](HELP.md)
+This will install aliases for some common task when working with [IOTstack](https://github.com/SensorsIot/IOTstack).
 
+## command overview
+
+[HELP.md](HELP.md)
+
+## The features is
 
 * Navigating to a container's "services" directory (eg to edit its environment file);
 * Launching a shell **inside** a container (for general nosing around);
@@ -13,41 +18,6 @@ This will install aliases for som common task When working with [IOTstack](https
 * and so on…
 
 Although you could create a scheme of shell scripts to accomplish most of these goals, aliases and shell functions are usually simpler and, often, the only way to accomplish some goals.
-
-
-
-**Note:**
-
-* This GitHub repository used to be a [gist](https://gist.github.com/Paraphraser/7612d3c780d284a502bd1f158c5186e8). Unfortunately, the copy-and-paste method of acquiring the aliases would occasionally cause problems when the original Unix `0x0A` line-endings (LF) were replaced with DOS/Windows `0x0D 0x0A` line-endings (CR+LF). The alias file would then fail. Providing the alias file via Git should reduce the likelihood of that happening.  
-
-## Prerequistes
-
-Make sure you are running an up-to-date version of `docker-compose` (1.29.1 or later):
-
-```
-$ docker-compose version
-docker-compose version 1.29.2, build unknown
-docker-py version: 5.0.0
-CPython version: 3.7.3
-OpenSSL version: OpenSSL 1.1.1d  10 Sep 2019
-```
-
-IOTstack installs `docker-compose` using `apt install`. That results in version 1.21.0, which is obsolete, and can't be upgraded using `apt upgrade`. If you discover that version 1.21.0 is installed on your system, you can upgrade like this:
-
-```
-$ cd ~/IOTstack
-$ docker-compose down
-$ sudo apt -y remove docker-compose
-$ [ "$(uname -m)" = "aarch64" ] && sudo apt install libffi-dev
-$ sudo pip3 install -U docker-compose
-```  
-
-Then logout and login again.
-
-See also:
-
-* [Installing Docker for IOTstack](https://gist.github.com/Paraphraser/d119ae81f9e60a94e1209986d8c9e42f) (gist).
-* If you run into trouble with the `pip3` command, see [scripting-iotstack-installations](https://gist.github.com/Paraphraser/d119ae81f9e60a94e1209986d8c9e42f#scripting-iotstack-installations) in that same gist.
 
 ## Installation
 
