@@ -26,24 +26,24 @@
 
 ### Shell for different containers
 
-| Shell for container |  Alias             |
-| ------------------- | ------------------ |
-| AdGuard             | [help/_SHELL.md](ADGUARD_SHELL)         |
-| Gitea               | [help/_SHELL.md](GITEA_SHELL)           |
-| Grafana             | [help/_SHELL.md](GRAFANA_SHELL)         |
-| HomeAssistant       | [help/_SHELL.md](HA_SHELL)              |
-| HomeBridge          | [help/_SHELL.md](HB_SHELL)              |
-| Influx              | [help/INFLUX_SHELL.md](INFLUX_SHELL.md) |
-| Mosquitto           | [help/_SHELL.md](MOSQUITTO_SHELL)       |
-| NextCloud           | [help/_SHELL.md](NEXTCLOUD_SHELL)       |
-| NextCloud DB        | [help/_SHELL.md](NEXTCLOUD_DB_SHELL)    |
-| NodeRed             | [help/_SHELL.md](NODERED_SHELL)         |
-| NodeRed data dir    | [help/NODERED_DATA.md](NODERED_DATA)    |
-| OctoPrint           | [help/_SHELL.md](OCTOPRINT_SHELL)       |
-| PiHole              | [help/_SHELL.md](PIHOLE_SHELL)          |
-| Postgres            | [help/_SHELL.md](POSTGRES_SHELL)        |
-| Telegraf            | [help/_SHELL.md](TELEGRAF_SHELL)        |
-| WireGuard           | [help/_SHELL.md](WIREGUARD_SHELL)       |
-| Zigbee              | [help/_SHELL.md](ZIGBEE_SHELL)          |
+| Shell for container |  Alias                             |
+| ------------------- | ---------------------------------- |
+| AdGuard             | [ADGUARD_SHELL](_SHELL.md)         |
+| Gitea               | [GITEA_SHELL](_SHELL.md)           |
+| Grafana             | [GRAFANA_SHELL](_SHELL.md)         |
+| HomeAssistant       | [HA_SHELL](_SHELL.md)              |
+| HomeBridge          | [HB_SHELL](_SHELL.md)              |
+| Influx              | [INFLUX_SHELL](INFLUX_SHELL.md)    |
+| Mosquitto           | [MOSQUITTO_SHELL](_SHELL.md)       |
+| NextCloud           | [NEXTCLOUD_SHELL](_SHELL.md)       |
+| NextCloud DB        | [NEXTCLOUD_DB_SHELL](_SHELL.md)    |
+| NodeRed             | [NODERED_SHELL](_SHELL.md)         |
+| NodeRed data dir    | [NODERED_DATA](NODERED_DATA.md)    |
+| OctoPrint           | [OCTOPRINT_SHELL](_SHELL.md)       |
+| PiHole              | [PIHOLE_SHELL](_SHELL.md)          |
+| Postgres            | [POSTGRES_SHELL](_SHELL.md)        |
+| Telegraf            | [TELEGRAF_SHELL](_SHELL.md)        |
+| WireGuard           | [WIREGUARD_SHELL](_SHELL.md)       |
+| Zigbee              | [ZIGBEE_SHELL](_SHELL.md)          |
 
 ## [README.md](Back ...)
