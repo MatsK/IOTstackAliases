@@ -1,6 +1,9 @@
 # Useful aliases for working with IOTstack
 
-When working with [IOTstack](https://github.com/SensorsIot/IOTstack), it is useful to automate many common tasks such as:
+This will install aliases for som common task When working with [IOTstack](https://github.com/SensorsIot/IOTstack).
+
+[HELP.mx](HELP.md)
+
 
 * Navigating to a container's "services" directory (eg to edit its environment file);
 * Launching a shell **inside** a container (for general nosing around);
@@ -11,7 +14,9 @@ When working with [IOTstack](https://github.com/SensorsIot/IOTstack), it is usef
 
 Although you could create a scheme of shell scripts to accomplish most of these goals, aliases and shell functions are usually simpler and, often, the only way to accomplish some goals.
 
-Note:
+
+
+**Note:**
 
 * This GitHub repository used to be a [gist](https://gist.github.com/Paraphraser/7612d3c780d284a502bd1f158c5186e8). Unfortunately, the copy-and-paste method of acquiring the aliases would occasionally cause problems when the original Unix `0x0A` line-endings (LF) were replaced with DOS/Windows `0x0D 0x0A` line-endings (CR+LF). The alias file would then fail. Providing the alias file via Git should reduce the likelihood of that happening.  
 
