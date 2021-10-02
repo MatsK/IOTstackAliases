@@ -27,7 +27,7 @@ Login to your Raspberry Pi and clone this repository. The recommended commands a
 
 ```bash
 $ mkdir -p "$HOME/.local"
-$ git clone https://github.com/Paraphraser/IOTstackAliases.git "$HOME/.local/IOTstackAliases"
+$ git clone https://github.com/mats-nk/IOTstackAliases.git "$HOME/.local/IOTstackAliases"
 ```
 
 ### <a name="step2"> Step 2 </a>
