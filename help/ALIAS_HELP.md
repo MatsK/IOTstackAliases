@@ -28,21 +28,22 @@
 
 | Shell for container |  Alias             |
 | ------------------- | ------------------ |
-| AdGuard             | ADGUARD_SHELL      |
-| Gitea               | GITEA_SHELL        |
-| Grafana             | GRAFANA_SHELL      |
-| HomeAssistant       | HA_SHELL           |
-| HomeBridge          | HB_SHELL           |
-| Influx              | INFLUX_SHELL       |
-| Mosquitto           | MOSQUITTO_SHELL    |
-| NextCloud           | NEXTCLOUD_SHELL    |
-| NextCloud DB        | NEXTCLOUD_DB_SHELL |
-| NodeRed             | NODERED_SHELL      |
-| NodeRed data dir    | NODERED_DATA       |
-| OctoPrint           | OCTOPRINT_SHELL    |
-| PiHole              | PIHOLE_SHELL       |
-| Postgres            | POSTGRES_SHELL     |
-| Telegraf            | TELEGRAF_SHELL     |
-| WireGuard           | WIREGUARD_SHELL    |
-| Zigbee              | ZIGBEE_SHELL       |
+| AdGuard             | [help/_SHELL.md](ADGUARD_SHELL)         |
+| Gitea               | [help/_SHELL.md](GITEA_SHELL)           |
+| Grafana             | [help/_SHELL.md](GRAFANA_SHELL)         |
+| HomeAssistant       | [help/_SHELL.md](HA_SHELL)              |
+| HomeBridge          | [help/_SHELL.md](HB_SHELL)              |
+| Influx              | [help/INFLUX_SHELL.md](INFLUX_SHELL.md) |
+| Mosquitto           | [help/_SHELL.md](MOSQUITTO_SHELL)       |
+| NextCloud           | [help/_SHELL.md](NEXTCLOUD_SHELL)       |
+| NextCloud DB        | [help/_SHELL.md](NEXTCLOUD_DB_SHELL)    |
+| NodeRed             | [help/_SHELL.md](NODERED_SHELL)         |
+| NodeRed data dir    | [help/NODERED_DATA.md](NODERED_DATA)    |
+| OctoPrint           | [help/_SHELL.md](OCTOPRINT_SHELL)       |
+| PiHole              | [help/_SHELL.md](PIHOLE_SHELL)          |
+| Postgres            | [help/_SHELL.md](POSTGRES_SHELL)        |
+| Telegraf            | [help/_SHELL.md](TELEGRAF_SHELL)        |
+| WireGuard           | [help/_SHELL.md](WIREGUARD_SHELL)       |
+| Zigbee              | [help/_SHELL.md](ZIGBEE_SHELL)          |
 
+## [README.md](Back ...)
