@@ -12,10 +12,10 @@
 ### Folder commands
 
 | Alias | Show files in folder  |
-| I     | /IOTstack            |
-| S     | /IOTstack/services   |
-| T     | /IOTstack/.templates |
-| V     | /IOTstack/volumes    |
+| ----- | --------------------- |
+| S     | ~/IOTstack/services   |
+| T     | ~/IOTstack/.templates |
+| V     | ~/IOTstack/volumes    |
 
 ### Misc
 
