@@ -35,3 +35,7 @@ influx -type=flux
 influx -database=«database name» -type=flux
 ```
 
+## [Back to Alias help ...](ALIAS_HELP.md)
+
+## [Back to README.md](/README.md)
+

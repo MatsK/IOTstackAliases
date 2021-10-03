@@ -1,4 +1,4 @@
-#### Alias: <a name="aliasSHELL"> `«container»\_SHELL` </a>
+#### Alias: <a name="aliasSHELL"> `«container»_SHELL` </a>
 
 This opens a shell within the container. For example:
 
@@ -27,4 +27,8 @@ Another benefit of using an alias scheme for common tasks is that you don't have
 * If you are trying to develop a "«container»\_SHELL" alias of your own and find that `bash` doesn't work, try replacing `bash` with `ash`, and then `sh`.
 
 * If you're wondering about the `-it` option on «container»\_SHELL aliases, think of it as "interactive terminal". It's really `-i` (keep STDIN connected) and `-t` (allocate a pseudo-TTY for output). It is how `docker exec` knows to wait for human interaction, and why you have to type `exit` or press <kbd>control</kbd>+<kbd>d</kbd> to get out of a container.
+
+## [Back to Alias help ...](ALIAS_HELP.md)
+
+## [Back to README.md](/README.md)
 

@@ -19,10 +19,12 @@
 
 ### Misc
 
-| Alias | Description                 |
-|-------|-----------------------------|
-| IP    | Show ontainers IP addresses |
-| HELP  | Show a help with most alias |
+| Alias | Description                  |
+|-------|----------------------------- |
+| DPS   | Show runing containers       |
+| DNET  | Show containers ports        |
+| DIPS  | Show containers IP addresses |
+| HELP  | Show a help text             |
 
 ### Shell for different containers
 

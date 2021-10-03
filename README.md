@@ -4,6 +4,14 @@
 
 This will install aliases for some common task when working with [IOTstack](https://github.com/SensorsIot/IOTstack).
 
+## Thanks to
+
+Thanks to:
+
+- [Paraphraser](https://github.com/Paraphraser) for starting this work.
+
+- [Daniel SP / yebo29](https://gist.github.com/yebo29) for posting how to extract IPs from running containers
+
 ## Alias overview
 
 [help/ALIAS_HELP.md](help/ALIAS_HELP.md)
