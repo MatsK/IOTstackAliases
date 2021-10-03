@@ -141,12 +141,14 @@ DIPS() {
       container_ports=( $(docker port "$container_id" | grep -o "0.0.0.0:.*" | cut -f2 -d:) )
       container_name="$(docker inspect --format "{{ .Name }}" "$container_id" | sed 's/\///')"
       container_ip="$(docker inspect --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}  {{end}}" "$container_id")"
-      printf "%-13s %-30s %-30s %-80s\n" "$container_id" "$container_name" "$container_ip" "${container_ports[*]}"
+      printf "%-20s %-30s %-20s\n" "$container_name" "$container_ip" "${container_ports[*]}"
    }
 
    local container_id
    container_id="$1"
-   printf "%-13s %-30s %-30s %-80s\n" 'Container Id' 'Container Name' 'Container IP' 'Container Ports'
+   printf "%-20s %-30s %-20s\n" "Container Name" "Container IP" "Container Ports"
+   printf "%-20s %-30s %-20s\n" "--------------" "------------" "---------------"
+
    if [ -z "$container_id" ]; then
       local container_id
       docker ps -a --format "{{.ID}}" | while read -r container_id ; do
