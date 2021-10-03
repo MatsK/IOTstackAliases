@@ -8,6 +8,7 @@ isNamedContainer() {
    else
       echo 0
    fi
+   printf "\n\n"
 }
 
 if [ $(isNamedContainer adguardhome) -gt 0 ] ; then
@@ -59,7 +60,7 @@ fi
 
 if [ $(isNamedContainer nodered) -gt 0 ] ; then
    alias      NODERED_SHELL='docker exec -it nodered bash'
-   alias       NODERED_DATA='cd ~/IOTstack/volumes/nodered/data;ls'
+   alias       NODERED_DATA='ls ~/IOTstack/volumes/nodered/data'
    echo -e "       NodeRed: \e[92mNODERED_SHELL\e[39m, \e[92mNODERED_DATA\e[39m"
 fi
 
@@ -107,7 +108,7 @@ alias                  I='ls ~/IOTstack'
 alias                  S='ls ~/IOTstack/services'
 alias                  T='ls ~/IOTstack/.templates'
 alias                  V='ls ~/IOTstack/volumes'
-#alias                 IP='docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)'
+
 
 DPS() {
    DPS_CMD="docker ps --format \"table {{.Names}}\t{{.RunningFor}}\t{{.Status}}\""
@@ -118,6 +119,7 @@ DPS() {
    bash -c "$DPS_CMD"
 }
 
+
 DNET() {
    DNET_CMD="docker ps --format \"table {{.Names}}\t{{.Ports}}\""
    while (( "$#" )); do
@@ -127,24 +129,55 @@ DNET() {
    bash -c "$DNET_CMD"
 }
 
+# Inspired by: https://gist.github.com/ipedrazas/2c93f6e74737d1f8a791
+DIPS() {
+   _print_container_info() {
+      local container_id
+      local container_ports
+      local container_ip
+      local container_name
+      container_id="${1}"
+
+      container_ports=( $(docker port "$container_id" | grep -o "0.0.0.0:.*" | cut -f2 -d:) )
+      container_name="$(docker inspect --format "{{ .Name }}" "$container_id" | sed 's/\///')"
+      container_ip="$(docker inspect --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}  {{end}}" "$container_id")"
+      printf "%-13s %-30s %-30s %-80s\n" "$container_id" "$container_name" "$container_ip" "${container_ports[*]}"
+   }
+
+   local container_id
+   container_id="$1"
+   printf "%-13s %-30s %-30s %-80s\n" 'Container Id' 'Container Name' 'Container IP' 'Container Ports'
+   if [ -z "$container_id" ]; then
+      local container_id
+      docker ps -a --format "{{.ID}}" | while read -r container_id ; do
+         _print_container_info  "$container_id"
+      done
+   else
+      _print_container_info  "$container_id"
+   fi
+}
+
 
 HELP () {
-   echo " "
+   printf "\n\n"
    echo -e " \e[1mIOTstackAliases from  github.com/mats-nk/IOTstackAliases\e[0m"
    echo " --------------------------------------------------------"
-   echo " "
+   printf "\n"
    echo -e " \e[1mDocker Compose\e[0m"
    echo -e " \e[92mUP\e[39m        | \e[92mDOWN\e[39m     | \e[92mBUILD\e[39m     | \e[92mREBUILD\e[39m   | \e[92mDNET\e[39m    {<container> …}"
    echo -e " \e[92mPULL\e[39m      | \e[92mRESTART\e[39m  | \e[92mTERMINATE\e[39m | \e[92mRECREATE\e[39m  | \e[92mDPS\e[39m     {<container> …}"
-   echo " "
-   echo " "
+   printf "\n"
    echo -e " \e[1mShow files in folder\e[0m"
    echo -e " ~/IOTstack             -  \e[92mI\e[39m"
    echo -e " ~/IOTstack/services    -  \e[92mS\e[39m"
    echo -e " ~/IOTstack/.templates  -  \e[92mT\e[39m"
    echo -e " ~/IOTstack/volumes     -  \e[92mV\e[39m"
-   echo " "
-   echo " "
+   printf "\n"
+   echo -e " \e[1mShow container info\e[0m"
+   echo -e " Show network           -  \e[92mDNET\e[39m"
+   echo -e " Show running cont.     -  \e[92mDPS\e[39m"
+   echo -e " Show ip addr           -  \e[92mDIPS\e[39m"
+   printf "\n"
    echo -e " \e[1mStart a shell in container <Services>\e[0m"
    echo -e "       AdGuard: \e[92mADGUARD_SHELL\e[39m"
    echo -e "         Gitea: \e[92mGITEA_SHELL\e[39m"
@@ -153,26 +186,33 @@ HELP () {
    echo -e "    HomeBridge: \e[92mHB_SHELL\e[39m"
    echo -e "        Influx: \e[92minflux, INFLUX_SHELL\e[39m"
    echo -e "     Mosquitto: \e[92mMOSQUITTO_SHELL\e[39m"
-   echo -e "     NextCloud: \e[92mNEXTCLOUD_SHELL, NEXTCLOUD_DB_SHELL\e[39m"
-   echo -e "       NodeRed: \e[92mNODERED_SHELL, NODERED_DATA\e[39m"
+   echo -e "     NextCloud: \e[92mNEXTCLOUD_SHELL\e[39m"
+   echo -e "  NextCloud db: \e[92mNEXTCLOUD_DB_SHELL\e[39m"
+   echo -e "       NodeRed: \e[92mNODERED_SHELL\e[39m"
+   echo -e "  NodeRed data: \e[92mNODERED_DATA\e[39m"
    echo -e "     OctoPrint: \e[92mOCTOPRINT_SHELL\e[39m"
    echo -e "        PiHole: \e[92mPIHOLE_SHELL\e[39m"
    echo -e "      Postgres: \e[92mPOSTGRES_SHELL\e[39m"
    echo -e "      Telegraf: \e[92mTELEGRAF_SHELL\e[39m"
    echo -e "     WireGuard: \e[92mWIREGUARD_SHELL\e[39m"
    echo -e "        Zigbee: \e[92mZIGBEE_SHELL\e[39m"
-   echo " "
+   printf "\n\n"
 }
 
 
-echo " "
+printf "\n"
 echo -e " \e[1mDocker Compose\e[0m"
 echo -e " \e[92mUP\e[39m        | \e[92mDOWN\e[39m     | \e[92mBUILD\e[39m     | \e[92mREBUILD\e[39m   | \e[92mDNET\e[39m    {<container> …}"
 echo -e " \e[92mPULL\e[39m      | \e[92mRESTART\e[39m  | \e[92mTERMINATE\e[39m | \e[92mRECREATE\e[39m  | \e[92mDPS\e[39m     {<container> …}"
-echo " "
+printf "\n"
 echo -e " \e[1mShow files in folder\e[0m"
 echo -e " ~/IOTstack             -  \e[92mI\e[39m"
 echo -e " ~/IOTstack/services    -  \e[92mS\e[39m"
 echo -e " ~/IOTstack/.templates  -  \e[92mT\e[39m"
 echo -e " ~/IOTstack/volumes     -  \e[92mV\e[39m"
-echo " "
+printf "\n"
+echo -e " \e[1mShow container info\e[0m"
+echo -e " Show network           -  \e[92mDNET\e[39m"
+echo -e " Show running cont.     -  \e[92mDPS\e[39m"
+echo -e " Show ip addr           -  \e[92mDIPS\e[39m"
+printf "\n\n"
