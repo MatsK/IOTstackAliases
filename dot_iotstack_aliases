@@ -1,6 +1,8 @@
-echo " "
-echo -e " \e[1mIOTstackAliases from  github.com/mats-nk/IOTstackAliases\e[0m"
-echo " --------------------------------------------------------"
+printf "\n"
+echo -e "\e[0m"
+
+echo -e "  \e[1mIOTstackAliases from  github.com/mats-nk/IOTstackAliases\e[0m"
+echo " ----------------------------------------------------------"
 
 isNamedContainer() {
    if [ -e ~/IOTstack/docker-compose.yml ] ; then
@@ -111,7 +113,8 @@ alias                  V='ls ~/IOTstack/volumes'
 
 
 DPS() {
-   DPS_CMD="docker ps --format \"table {{.Names}}\t{{.RunningFor}}\t{{.Status}}\""
+   DPS_CMD="docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}""
+#docker ps --format \"table {{.Names}}\t{{.RunningFor}}\t{{.Status}}\""
    while (( "$#" )); do
       DPS_CMD="$DPS_CMD --filter name=$1"
       shift
@@ -170,15 +173,15 @@ HELP () {
    echo -e " \e[92mPULL\e[39m      | \e[92mRESTART\e[39m  | \e[92mTERMINATE\e[39m | \e[92mRECREATE\e[39m  | \e[92mDPS\e[39m     {<container> …}"
    printf "\n"
    echo -e " \e[1mShow files in folder\e[0m"
-   echo -e " ~/IOTstack             -  \e[92mI\e[39m"
-   echo -e " ~/IOTstack/services    -  \e[92mS\e[39m"
-   echo -e " ~/IOTstack/.templates  -  \e[92mT\e[39m"
-   echo -e " ~/IOTstack/volumes     -  \e[92mV\e[39m"
+   echo -e " ~/IOTstack              -  \e[92mI\e[39m"
+   echo -e " ~/IOTstack/services     -  \e[92mS\e[39m"
+   echo -e " ~/IOTstack/.templates   -  \e[92mT\e[39m"
+   echo -e " ~/IOTstack/volumes      -  \e[92mV\e[39m"
    printf "\n"
    echo -e " \e[1mShow container info\e[0m"
-   echo -e " Show network           -  \e[92mDNET\e[39m"
-   echo -e " Show running cont.     -  \e[92mDPS\e[39m"
-   echo -e " Show ip addr           -  \e[92mDIPS\e[39m"
+   echo -e " Show network            -  \e[92mDNET\e[39m"
+   echo -e " Show running containers -  \e[92mDPS\e[39m"
+   echo -e " Show ip addr            -  \e[92mDIPS\e[39m"
    printf "\n"
    echo -e " \e[1mStart a shell in container <Services>\e[0m"
    echo -e "       AdGuard: \e[92mADGUARD_SHELL\e[39m"
@@ -208,10 +211,8 @@ echo -e " \e[92mUP\e[39m        | \e[92mDOWN\e[39m     | \e[92mBUILD\e[39m     |
 echo -e " \e[92mPULL\e[39m      | \e[92mRESTART\e[39m  | \e[92mTERMINATE\e[39m | \e[92mRECREATE\e[39m  | \e[92mDPS\e[39m     {<container> …}"
 printf "\n"
 echo -e " \e[1mShow files in folder\e[0m"
-echo -e " ~/IOTstack             -  \e[92mI\e[39m"
-echo -e " ~/IOTstack/services    -  \e[92mS\e[39m"
-echo -e " ~/IOTstack/.templates  -  \e[92mT\e[39m"
-echo -e " ~/IOTstack/volumes     -  \e[92mV\e[39m"
+echo -e " ~/IOTstack             -  \e[92mI\e[39m    |   ~/IOTstack/services    -  \e[92mS\e[39m"
+echo -e " ~/IOTstack/.templates  -  \e[92mT\e[39m    |   ~/IOTstack/volumes     -  \e[92mV\e[39m"
 printf "\n"
 echo -e " \e[1mShow container info\e[0m"
 echo -e " Show network           -  \e[92mDNET\e[39m"
