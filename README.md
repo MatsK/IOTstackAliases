@@ -32,7 +32,7 @@ Although you could create a scheme of shell scripts to accomplish most of these 
 Not completed, just a embryo for a install script
 
 ```bash
-curl https://raw.githubusercontent.com/mats-nk/IOTstackAliases/mats-nk/install.sh | bash
+curl https://raw.githubusercontent.com/matsk/IOTstackAliases/matsk/install.sh | bash
 ```
 
 
